@@ -14,8 +14,6 @@ abstract class Repository implements BaseRepositoryContract
      */
     protected string $model;
 
-    protected $container;
-
     /**
      * @param $model
      * @return mixed|string
@@ -27,22 +25,8 @@ abstract class Repository implements BaseRepositoryContract
         return $this;
     }
 
-    public function setContainer(Container $container)
-    {
-        $this->container = $container;
-
-        return $this;
-    }
-
-    public function getContainer($service = null)
-    {
-        return $service === null ? ($this->container ?: app()) : ($this->container[$service] ?: app($service));
-    }
-
     public function getModel()
     {
-        $entity = $this->getContainer('config')->get('repository.models');
-
-        return $this->model ?: str_replace(['Repositories', 'Repository'], [$entity, ''], static::class);
+        return $this->model;
     }
 }

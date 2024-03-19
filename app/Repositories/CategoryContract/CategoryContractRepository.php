@@ -12,8 +12,7 @@ class CategoryContractRepository extends BaseRepository implements CategoryContr
 {
     public function __construct(Container $container)
     {
-        $this->setModel(Category::class)
-            ->setContainer($container);
+        $this->setModel(Category::class);
     }
 
     public function getAll()
