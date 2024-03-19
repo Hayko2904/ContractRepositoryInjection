@@ -4,21 +4,21 @@
 namespace App\Services\Category;
 
 
-use App\Repositories\CategoryContract\CategoryContract;
+use App\Repositories\CategoryContract\CategoryRepositoryContract;
 use service\BaseService;
 
 final class CategoryService extends BaseService implements CategoryServiceContract
 {
-    protected $categoryContract;
+    protected $categoryRepositoryContract;
 
     public function __construct(
-        CategoryContract $categoryContract
+        CategoryRepositoryContract $categoryRepositoryContract
     ) {
-        $this->categoryContract = $categoryContract;
+        $this->categoryRepositoryContract = $categoryRepositoryContract;
     }
 
     public function getAll()
     {
-        return $this->categoryContract->getAll();
+        return $this->categoryRepositoryContract->getAll();
     }
 }

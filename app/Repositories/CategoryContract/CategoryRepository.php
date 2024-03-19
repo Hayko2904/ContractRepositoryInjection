@@ -8,7 +8,7 @@ use App\Models\Category;
 use App\Repositories\BaseRepository;
 use Illuminate\Contracts\Container\Container;
 
-class CategoryContractRepository extends BaseRepository implements CategoryContract
+class CategoryRepository extends BaseRepository implements CategoryRepositoryContract
 {
     public function __construct(Container $container)
     {
