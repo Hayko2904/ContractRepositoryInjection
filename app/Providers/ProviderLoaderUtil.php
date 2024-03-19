@@ -74,8 +74,8 @@ trait ProviderLoaderUtil
         $namespace = 'App\Repositories';
 
         foreach ($folders as $folder) {
-            $contract_file = str_replace('.php', '', scandir($_root_directory . $folder)[2]);
-            $repo_file = str_replace('.php', '', scandir($_root_directory . $folder)[3]);
+            $contract_file = str_replace('.php', '', scandir($_root_directory . $folder)[3]);
+            $repo_file = str_replace('.php', '', scandir($_root_directory . $folder)[2]);
 
             $this->loadContracts[] = $contract_file;
             $this->loadRepositories[] = $repo_file;
