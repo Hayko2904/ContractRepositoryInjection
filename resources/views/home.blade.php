@@ -12,3 +12,5 @@
     <input type="text" name="name">
     <button>create</button>
 </form>
+
+{{ $errors }}

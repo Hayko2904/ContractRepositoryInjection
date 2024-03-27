@@ -18,13 +18,19 @@ class BaseRepository extends Repository
         try {
             DB::beginTransaction();
 
-            $data = $this->model::query()->create($request->toArray());
+            $data = [
+                'success' => true,
+                'result' => $this->model::query()->create($request->toArray())
+            ];
 
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
 
-            $data = $e->getMessage();
+            $data = [
+                'success' => false,
+                'result' => $e->getMessage()
+            ];
         }
 
         return $data;
