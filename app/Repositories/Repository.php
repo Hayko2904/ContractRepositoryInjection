@@ -6,6 +6,8 @@ namespace App\Repositories;
 
 use App\Contracts\BaseRepositoryContract;
 use Illuminate\Contracts\Container\Container;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 abstract class Repository implements BaseRepositoryContract
 {
@@ -25,6 +27,9 @@ abstract class Repository implements BaseRepositoryContract
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function getModel()
     {
         return $this->model;

@@ -7,6 +7,7 @@ namespace App\Repositories\CategoryContract;
 use App\Models\Category;
 use App\Repositories\BaseRepository;
 use Illuminate\Contracts\Container\Container;
+use Illuminate\Http\Request;
 
 class CategoryRepository extends BaseRepository implements CategoryRepositoryContract
 {
@@ -19,4 +20,5 @@ class CategoryRepository extends BaseRepository implements CategoryRepositoryCon
     {
         return $this->model::all();
     }
+
 }

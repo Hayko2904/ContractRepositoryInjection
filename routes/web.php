@@ -14,3 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home']);
+
+Route::prefix('category')->group(function(){
+    Route::post('/create', [\App\Http\Controllers\CategoryController::class, 'create']);
+});
