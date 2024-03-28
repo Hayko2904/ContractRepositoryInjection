@@ -7,7 +7,7 @@
     @endforeach
 @endsection
 
-<form action="/category/create" method="post">
+<form action="/categories" method="post">
     @csrf
     <input type="text" name="name">
     <button>create</button>

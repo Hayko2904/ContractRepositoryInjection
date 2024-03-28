@@ -23,7 +23,7 @@ class CategoryController extends Controller
         $this->categoryServiceContract = $categoryServiceContract;
     }
 
-    public function create(CategoryRequest $request)
+    public function store(CategoryRequest $request)
     {
         return $this->categoryServiceContract->doCreate($request);
     }

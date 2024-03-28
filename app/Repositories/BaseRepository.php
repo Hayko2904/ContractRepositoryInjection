@@ -35,12 +35,4 @@ class BaseRepository extends Repository
 
         return $data;
     }
-
-    /**
-     * @inheritDoc
-     */
-    public function where($attr, $operator = null, $value = null, $boolean = 'and')
-    {
-        dd('where');
-    }
 }
